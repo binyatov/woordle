@@ -3,7 +3,6 @@ angular
     .controller('Result', function ($scope, $location, $routeParams) {
         $scope.model = {};
         $scope.model.users = [];
-        Parse.initialize('tVjrmGMQinaozGHcbfedVMDIUvJVoRCKKeuWtS16', 'QcepLGcJ7R9LnsWnO5RDNk7FOg9VXHh0MuOFiYEm');
         var query = new Parse.Query('users');
         query.get($routeParams.user, {
             success: function (data) {

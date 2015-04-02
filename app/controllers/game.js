@@ -6,7 +6,6 @@ angular
         $scope.model.temp = [];
         $scope.model.time = 40;
         $scope.model.score = 0;
-        Parse.initialize('tVjrmGMQinaozGHcbfedVMDIUvJVoRCKKeuWtS16', 'QcepLGcJ7R9LnsWnO5RDNk7FOg9VXHh0MuOFiYEm');
         var query = new Parse.Query('wordsObject');
         query.limit(10);
         query.find({
