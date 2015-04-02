@@ -1,11 +1,10 @@
 angular
-    .module('woordle', [])
+    .module('woordle', ['ngRoute'])
     .config(function ($routeProvider) {
         //configuration of the routes
         $routeProvider
             // Main view
             .when('/', {
-                templateUrl: 'main.html',
-                controller: 'Main'
+                templateUrl: 'app/views/main.html'
             })
-});
+    });
