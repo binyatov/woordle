@@ -7,4 +7,8 @@ angular
             .when('/', {
                 templateUrl: 'app/views/main.html'
             })
+            .when('/start/:user', {
+                templateUrl: 'app/views/puzzle.html',
+                controller: 'Game'
+            })
     });
