@@ -11,4 +11,8 @@ angular
                 templateUrl: 'app/views/puzzle.html',
                 controller: 'Game'
             })
+            .when('/result/:user', {
+                templateUrl: 'app/views/result.html',
+                controller: 'Result'
+            })
     });

@@ -1,0 +1,7 @@
+<h1>wo<i class="fa fa-dashcube"></i>rdle</h1>
+<div class="fscr">{{model.user}} - {{model.score}}</div>
+<button type="button" ng-click="start()" class="btn btn-primary"><i class="fa fa-rocket"></i> Restart</button>
+<h1>Top 10</h1>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="user in model.users"><i class="fa fa-user"></i> {{user.name}} - {{user.score}}</li>
+</ul>
