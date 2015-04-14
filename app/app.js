@@ -15,4 +15,8 @@ angular
                 templateUrl: 'app/views/result.html',
                 controller: 'Result'
             })
+            .when('/game/:id', {
+                templateUrl: 'app/views/user.html',
+                controller: 'User'
+            })
     });

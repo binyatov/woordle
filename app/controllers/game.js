@@ -3,6 +3,7 @@ angular
     .controller('Game', function ($scope, $location, $interval, $routeParams) {
         $scope.model = {};
         $scope.model.words = [];
+        $scope.model.scores = [];
         $scope.model.temp = [];
         $scope.model.time = 40;
         $scope.model.score = 0;
@@ -13,7 +14,7 @@ angular
                 for (var i = 0; i < data.length; i++) {
                     $scope.model.words.push(data[i].attributes.word);
                 }
-                pick();
+                pick();            
             },
             error: function(error) {
                 console.log(error);
@@ -52,7 +53,8 @@ angular
             newScore.save(
                 {
                     name: $routeParams.user, 
-                    score: $scope.model.score
+                    score: $scope.model.score,
+                    result: $scope.model.scores
                 },
                 {
                     success: function(data) {
@@ -74,11 +76,17 @@ angular
             if ($scope.model.answer == $scope.model.word) {
                 if (backs > 0 && index >= backs) { n = (index - backs) + 1; }
                 else { n = index + 1; }
-                index = 0;
-                backs = 0;
                 $scope.model.score += Math.floor(1.95^(n/3));
                 $scope.model.temp = [];
                 $scope.model.answer = '';
+                $scope.model.scores.push({
+                    word: $scope.model.word, 
+                    actscore: Math.floor(1.95^(n/3)),
+                    maxscore: Math.floor(1.95^((len+1)/3))
+                })
+                console.log(len+1, n);
+                index = 0;
+                backs = 0;
                 pick();
             }
         }

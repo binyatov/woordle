@@ -16,7 +16,8 @@ angular
                         for (var i = 0; i < data.length; i++) {
                             $scope.model.users.push({
                                 name: data[i].attributes.name,
-                                score: data[i].attributes.score
+                                score: data[i].attributes.score,
+                                id: data[i].id
                             });
                         }
                         $scope.$apply();
